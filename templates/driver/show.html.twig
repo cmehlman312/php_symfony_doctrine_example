@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="text-[32px] font-semibold border-b border-white/10 pb-5 mb-5">
+        Driver Details
+    </h1>
+
+    <h4 class="text-xs text-slate-300 font-semibold mt-2 uppercase">Name</h4>
+    <p class="text-[22px] font-semibold">{{ driver.name }}</p>
+
+
+    <h4 class="text-xs text-slate-300 font-semibold mt-2 uppercase">Years driving</h4>
+    <p class="text-[22px] font-semibold">{{ driver.yearsdriving }}</p>
+
+    <h4 class="text-xs text-slate-300 font-semibold mt-2 uppercase">Can drive manual?</h4>
+    <p class="text-[22px] font-semibold">{{ driver.drivemanual }}</p>
+
+    <div class="mt-6">
+        <h3 class="tracking-tight text-[22px] font-semibold">
+            <a class="hover:underline" href="{{ path('app_driver_edit', {id: driver.id}) }}">Edit</a>
+        </h3>
+    </div>
+
+    <div class="mt-6">
+        <h3 class="tracking-tight text-[22px] font-semibold">
+            <a href="{{ path('app_driver_index') }}" class="bg-yellow-500 font-bold py-2 px-4 rounded transition-all hover:bg-yellow-300">Go back to Driver list</a>
+        </h3>
+    </div>
+
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}
+

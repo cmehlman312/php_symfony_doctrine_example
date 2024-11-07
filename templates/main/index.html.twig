@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Hello HomepageController!{% endblock %}
+
+{% block body %}
+
+    <div class="flex flex-col min-h-screen justify-center items-center">
+        <div class="flex-row">
+            <h1 class="text-slate-500 text-6xl font-bold">Welcome</h1>
+        </div>
+
+        <div class="flex-row">
+            <h2>Please choose from the following options below:</h2>
+        </div>
+
+        <div class="flex-row">
+            <ul>
+                <li class="mt-6 mb-6">
+                    <a class="hover:text-slate-200 rounded bg-green-300 mt-6 mb-6 px-2 py-2" href="{{ path('app_car_index') }}">Cars</a>
+                </li>
+
+                <li class="mt-6 mb-6">
+                    <a class="hover:text-slate-200 rounded bg-blue-300 mt-6 mb-6 px-2 py-2" href="{{ path('app_driver_index') }}">Drivers</a>
+                </li>
+
+                <li class="mt-6 mb-6">
+                    <a class="hover:text-slate-200 rounded bg-yellow-300 mt-6 mb-6 px-2 py-2" href="{{ path('app_assign_index') }}">Assignment</a>
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
+{% endblock %}

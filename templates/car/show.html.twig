@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Car Details{% endblock %}
+
+{% block body %}
+    <div class="ml-6">
+        <h1 class="text-[32px] font-semibold border-b border-white/10 pb-5 mb-5">
+            Car Details
+        </h1>
+
+        <h4 class="text-xs text-blue-500 font-semibold mt-2 uppercase">Make</h4>
+        <p class="text-[22px] font-semibold">{{ car.make }}</p>
+
+        <h4 class="text-xs text-blue-500 font-semibold mt-2 uppercase">Model</h4>
+        <p class="text-[22px] font-semibold">{{ car.model }}</p>
+
+        <h4 class="text-xs text-blue-500 font-semibold mt-2 uppercase">Year</h4>
+        <p class="text-[22px] font-semibold">{{ car.year }}</p>
+
+        <h4 class="text-xs text-blue-500 font-semibold mt-2 uppercase">Color</h4>
+        <p class="text-[22px] font-semibold">{{ car.color }}</p>
+
+        <h4 class="text-xs text-blue-500 font-semibold mt-2 uppercase">Transmission</h4>
+        <p class="text-[22px] font-semibold">{{ car.transmission }}</p>
+
+        <div class="mt-6">
+            <h3 class="tracking-tight text-[22px] font-semibold">
+                <a class="bg-red-500 font-bold py-2 px-4 rounded transition-all hover:bg-red-300" href="{{ path('app_car_edit', {id: car.id}) }}">Edit</a>
+                <a class="bg-purple-500 font-bold py-2 px-4 rounded transition-all ml-6 hover:bg-purple-300" href="{{ path('app_car_delete', {id: car.id}) }}">Delete</a>
+            </h3>
+        </div>
+
+        <div class="mt-6">
+            <h3 class="tracking-tight text-[22px] font-semibold">
+                <a href="{{ path('app_car_index') }}" class="bg-yellow-500 font-bold py-2 px-4 rounded transition-all hover:bg-yellow-300">Go back to Car list</a>
+            </h3>
+        </div>
+    </div>
+{% endblock %}
+
+
+

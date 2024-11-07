@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    {{  form(driver_form) }}
+
+
+
+    <div class="mt-6">
+        <h4 class="tracking-tight text-[22px] font-semibold">
+            <a href="{{ path('app_car_index') }}" class="bg-yellow-500 font-bold py-2 px-4 rounded transition-all hover:bg-yellow-300">Go back to Car list</a>
+        </h4>
+    </div>
+
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}
+

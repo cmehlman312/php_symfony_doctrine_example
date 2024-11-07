@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Car Assign Drivers{% endblock %}
+
+{% block body %}
+
+
+    <a href="{{ path('app_homepage') }}">Back to the main menu</a>
+
+
+
+    <h1 class="mt-8 mb-8">Here are a list of cars:</h1>
+
+
+    <ul>
+        {%  for car in cars %}
+            <li>
+                <a href="{{ path('app_assign_show', {id: car.id}) }}"> {{ car.year }} {{ car.color}} {{ car.make }}  {{ car.model }}  {{ car.transmission }}</a>
+            </li>
+        {%  endfor %}
+    </ul>
+
+
+
+
+{% endblock %}

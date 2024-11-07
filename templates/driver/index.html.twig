@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DriverController!{% endblock %}
+
+{% block body %}
+    <a href="{{ path('app_homepage') }}">Back to the main menu</a>
+
+
+
+    <h1 class="mt-8 mb-8">Here are a list of drivers:</h1>
+
+
+    <ul>
+        {%  for driver in drivers %}
+            <li>
+                <a href="{{ path('app_driver_show', {id: driver.id}) }}"> {{ driver.name }}</a>
+            </li>
+        {%  endfor %}
+    </ul>
+
+    <div class="mt-8">
+        <a href="{{ path('app_driver_create') }}">Create new driver</a>
+    </div>
+
+
+
+{% endblock %}

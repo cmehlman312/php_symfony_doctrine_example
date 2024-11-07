@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cars{% endblock %}
+
+{% block body %}
+{#    <a href="{{ path('app_homepage') }}">Back to the main menu</a>#}
+
+
+
+    <h1 class="mt-8 mb-8">Here are a list of cars:</h1>
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <tr>
+            <th class="px-6 py-3">Year</th>
+            <th class="px-6 py-3">Color</th>
+            <th class="px-6 py-3">Make</th>
+            <th class="px-6 py-3">Model</th>
+            <th class="px-6 py-3">Transmission</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {%  for car in cars %}
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <td class="px-6 py-4">{{ car.year }}</td>
+                <td class="px-6 py-4">{{ car.color}} </td>
+                <td class="px-6 py-4">{{ car.make}} </td>
+                <td class="px-6 py-4">{{ car.model}} </td>
+                <td class="px-6 py-4">{{ car.transmission}} </td>
+                <td class="px-6 py-4"><a href="{{ path('app_car_show', {id: car.id}) }}" class="rounded-md bg-blue-500 px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-blue-200">View</a></td>
+            </tr>
+        {%  endfor %}
+        </tbody>
+    </table>
+</div>
+
+    <div class="mt-8">
+        <a href="{{ path('app_car_create') }}" class="rounded-md bg-green-500 px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-green-200">Create new car</a>
+    </div>
+
+
+{% endblock %}

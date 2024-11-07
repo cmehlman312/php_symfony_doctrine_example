@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    <h1 class="text-[32px] font-semibold border-b border-white/10 pb-5 mb-5">
+        Car Details
+    </h1>
+
+    <h4 class="text-xs text-slate-300 font-semibold mt-2 uppercase">Make</h4>
+    <p class="text-[22px] font-semibold">{{ car.make }}</p>
+
+    <h4 class="text-xs text-slate-300 font-semibold mt-2 uppercase">Model</h4>
+    <p class="text-[22px] font-semibold">{{ car.model }}</p>
+
+    <h4 class="text-xs text-slate-300 font-semibold mt-2 uppercase">Year</h4>
+    <p class="text-[22px] font-semibold">{{ car.year }}</p>
+
+    <h4 class="text-xs text-slate-300 font-semibold mt-2 uppercase">Transmission</h4>
+    <p class="text-[22px] font-semibold">{{ car.transmission }}</p>
+
+    <h4 class="text-xs text-slate-300 font-semibold mt-2 uppercase">Assigned Driver</h4>
+    <p class="text-[22px] font-semibold">{{ driver }}</p>
+
+
+    <div class="mt-6">
+        <h3 class="tracking-tight text-[22px] font-semibold">
+            <a class="hover:underline" href="{{ path('app_assign_edit', {id: car.id}) }}">Edit</a>
+        </h3>
+    </div>
+
+    <div class="mt-6">
+        <h3 class="tracking-tight text-[22px] font-semibold">
+            <a class="hover:underline" href="{{ path('app_assign_index') }}">Go back to Assigned list</a>
+        </h3>
+    </div>
+
+{% endblock %}
+
+
+
+{% block title %}
+
+{% endblock %}
+
